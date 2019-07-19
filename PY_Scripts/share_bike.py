@@ -353,7 +353,7 @@ def station_125(data_path,k, goPath):
     #for i in distance_list:
     #   print(i)
 
-def write_csv(k) 
+def write_csv(k):
     f = open(str(goPath) + "OUT_+_" + str(k) +".csv","w+")
     print("###############################################################################")
     print("                 DONE                                    DONE          ")
@@ -392,7 +392,7 @@ def net_function():
             station_125(Data_path,data_path)
 
         write_csv(0)
-        
+
         for i in range(0,nCsv[l.index(data_path)]):
             Fata_path = data_path + str(i) +".csv"
             station_125(Fata_path,5,data_path)
