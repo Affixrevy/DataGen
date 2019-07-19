@@ -348,6 +348,12 @@ def station_125(data_path,k, goPath):
         # print(sum_distance)
         # print("each_carbon: ",carbon,"sum_distance: ", sum_distance)    
    
+    #print("distance: ")
+    #f.write("distance: ")
+    #for i in distance_list:
+    #   print(i)
+
+def write_csv(k) 
     f = open(str(goPath) + "OUT_+_" + str(k) +".csv","w+")
     print("###############################################################################")
     print("                 DONE                                    DONE          ")
@@ -366,10 +372,6 @@ def station_125(data_path,k, goPath):
         f.write(str(distance_list[i])+"\n")
         #print(i)
     f.write("\n")
-    #print("distance: ")
-    #f.write("distance: ")
-    #for i in distance_list:
-    #   print(i)
 
 def net_function():
     l = ["/home/agao/ALL_DATA_7-25/", "/home/agao/ALL_DATA_7-25-110/",  "/home/agao/ALL_DATA_7-1000/", "/home/agao/ALL_DATA_7-1000-110/", "/home/agao/ALL_DATA_7-100000/", "/home/agao/ALL_DATA_12-25/", "/home/agao/ALL_DATA_12-25-110/",  "/home/agao/ALL_DATA_12-1000/", "/home/agao/ALL_DATA_12-1000-110/", "/home/agao/ALL_DATA_12-100000/", "/home/agao/ALL_DATA_25-25/", "/home/agao/ALL_DATA_25-25-110/",  "/home/agao/ALL_DATA_25-1000/", "/home/agao/ALL_DATA_25-1000-110/", "/home/agao/ALL_DATA_25-100000/"]
@@ -386,18 +388,20 @@ def net_function():
         
 
         for i in range(0,nCsv[l.index(data_path)]):
-            print("datapath1: ",data_path)
             Data_path = data_path + str(i) +".csv"
-            print("datapath2: ",data_path)
-            station_125(Data_path,0,data_path)
+            station_125(Data_path,data_path)
 
+        write_csv(0)
+        
         for i in range(0,nCsv[l.index(data_path)]):
             Fata_path = data_path + str(i) +".csv"
             station_125(Fata_path,5,data_path)
 
+        write_csv(5)
         for i in range(0,nCsv[l.index(data_path)]):
             Kata_path = data_path + str(i) +".csv"
             station_125(Kata_path,10,data_path)
+        write_csv(10)
             
 # main()
 
