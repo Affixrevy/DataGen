@@ -383,9 +383,10 @@ def net_function():
         if l.index(data_path) in [6]:
             TRUCK_WEIGHT = 10
             truckFull = 25
-        if l.index(data_path) in [11]:
-            TRUCK_WEIGHT = 20
-            truckFull = 50
+        #if l.index(data_path) in [11]:
+        
+        TRUCK_WEIGHT = 20
+        truckFull = 50
         
         carbon_list = []
         distance_list = []
