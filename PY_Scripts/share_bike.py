@@ -348,7 +348,7 @@ def station_125(data_path,k, goPath):
         # print(sum_distance)
         # print("each_carbon: ",carbon,"sum_distance: ", sum_distance)    
    
-    f = open(str(goPath) + "OUT + " + str(k) ,"w+")
+    f = open(str(goPath) + "OUT_+_" + str(k) +".csv","w+")
     print("###############################################################################")
     print("                 DONE                                    DONE          ")
     print("                                     /")
