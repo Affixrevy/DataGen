@@ -97,7 +97,7 @@ public class Main {
                 System.out.println("###############################################################################");
                 System.out.println();
 
-                csvWrite();
+                csvWrite(j, l);
                 finalPrint();
             }
         }
@@ -141,8 +141,8 @@ public class Main {
         return totBike;
     }//End importer
 
-    private static void csvWrite() {
-        try (PrintWriter writer = new PrintWriter(new File("/home/agao/EXPORT/out.csv"))) {
+    private static void csvWrite(int j, int l) {
+        try (PrintWriter writer = new PrintWriter(new File("/home/agao/EXPORT/out"+j+l+".csv"))) {
 
             StringBuilder sb = new StringBuilder();
 
