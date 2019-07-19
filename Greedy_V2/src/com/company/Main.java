@@ -10,11 +10,11 @@ import java.util.Scanner;
 public class Main {
 
     //Manipulable Variables
-    private static int busWeight = 0;
-    private static int maxBike = 15;
+    private static int busWeight = 10;
+    private static int maxBike = 25;
     private static double depotXPos = 34.28037084;
     private static double depotYPos = 108.9691212;
-    private static int startingBikes = 10;
+    private static int startingBikes = 0;
     private static String fileName = "/home/agao/ALL_DATA_-100000-110/";
     private static int totNumb = 99999;
 
@@ -33,64 +33,78 @@ public class Main {
     private static ArrayList<Double> allEmis = new ArrayList<>();
 
     public static void main(String[] args) {
-        String[] allFiles = {"/home/agao/ALL_DATA_12-25", "/home/agao/ALL_DATA_12-25-110", "/home/agao/ALL_DATA_12-1000", "/home/agao/ALL_DATA_12-25-1000-110", "/home/agao/ALL_DATA_12-100000", "/home/agao/ALL_DATA_100000-10"}
+        String[] allFiles = {"/home/agao/ALL_DATA_12-25", "/home/agao/ALL_DATA_12-25-110", "/home/agao/ALL_DATA_12-1000", "/home/agao/ALL_DATA_12-1000-110", "/home/agao/ALL_DATA_12-100000", "/home/agao/ALL_DATA_12-100000-110", "/home/agao/ALL_DATA_25-25", "/home/agao/ALL_DATA_25-25-110", "/home/agao/ALL_DATA_25-1000", "/home/agao/ALL_DATA_25-1000-110", "/home/agao/ALL_DATA_25-100000", "/home/agao/ALL_DATA_25-100000-110"};
+        int[] allTNum = {25, 25, 999, 999, 99999, 99999, 25, 25, 999, 999, 99999, 99999};
 
+        for (int j = 0; j < allFiles.length; j++) {
 
-        for (int i = 0; i <= totNumb; i++) {
-
-            totDist = 0;
-            totEmissions = 0;
-            int temp = importer(i);
-            //System.out.println();
-            if (startingBikes == 0) {
-                if (temp < 0) {
-                    Truck.setBike(Math.abs(temp));
-                } else {
-                    Truck.setBike(0);
-                }
-            } else {
-                if (temp < 0) {
-                    Truck.setBike(Math.abs(temp) + startingBikes);
-                } else {
-                    Truck.setBike(startingBikes);
-                }
+            fileName = allFiles[j];
+            totNumb = allTNum[j];
+            if(j == 6){
+                maxBike = 50;
+                busWeight = 20;
             }
-            //Truck.setBike(20);
-            Truck.cngPos(34.275555, 108.955555);
-            //Calculate Stations
 
-            while (numStations > 0) {
-                calcDist();
-                goStation();
+            for (int l = 0; l < 3; l++) {
 
+                if(l == 0){
+                    startingBikes = 0;
+                } else if (l == 1){
+                    startingBikes = 5;
+                } else if (l == 2){
+                    startingBikes = 10;
+                }
+
+                for (int i = 0; i <= totNumb; i++) {
+
+                    totDist = 0;
+                    totEmissions = 0;
+                    int temp = importer(i);
+
+                    if (temp < 0) {
+                        Truck.setBike(Math.abs(temp) + startingBikes);
+                    } else {
+                        Truck.setBike(startingBikes);
+                    }
+
+                    //Truck.setBike(20);
+                    Truck.cngPos(34.275555, 108.955555);
+                    //Calculate Stations
+
+                    while (numStations > 0) {
+                        calcDist();
+                        goStation();
+
+                    }
+                    calcPrint();
+
+                    System.out.println(i);
+                }
+
+                System.out.println();
+                System.out.println("###############################################################################");
+                System.out.println("                 DONE                                    DONE          ");
+                System.out.println();
+                System.out.println("                                     /");
+                System.out.println("                                    /");
+                System.out.println("                                   /");
+                System.out.println("                                  /___");
+                System.out.println();
+                System.out.println("           ___________                              ______________");
+                System.out.println("                      |                             |");
+                System.out.println("                      |_____________________________|");
+                System.out.println();
+                System.out.println("###############################################################################");
+                System.out.println();
+
+                csvWrite();
+                finalPrint();
             }
-            calcPrint();
-
-            System.out.println(i);
         }
-        System.out.println();
-        System.out.println("###############################################################################");
-        System.out.println("                 DONE                                    DONE          ");
-        System.out.println();
-        System.out.println("                                     /");
-        System.out.println("                                    /");
-        System.out.println("                                   /");
-        System.out.println("                                  /___");
-        System.out.println();
-        System.out.println("           ___________                              ______________");
-        System.out.println("                      |                             |");
-        System.out.println("                      |_____________________________|");
-        System.out.println();
-        System.out.println("###############################################################################");
-        System.out.println();
-
-        csvWrite();
-        finalPrint();
-
     }//End Main
 
     //Import distances form csv
-    private static int importer(int num, String Name) {
+    private static int importer(int num) {
         String line;
 
         int totBike = 0;
@@ -98,10 +112,10 @@ public class Main {
 
         //String fileName = "stations12.csv";
 
-        String FileName = fileName + num + ".csv";
+        String FileName = fileName + "/" + num + ".csv";
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(Name));
+            BufferedReader reader = new BufferedReader(new FileReader(FileName));
 
             while ((line = reader.readLine()) != null) {
                 String[] temp = line.split(",");
