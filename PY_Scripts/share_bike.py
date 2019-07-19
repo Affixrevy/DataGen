@@ -139,7 +139,7 @@ def set_vminus(edge_index, tsp):
 
 
 def move_to_first_can_be_colletted(v_plus, tsp, truck, carbon, sum_distance):
-    if Truck.full_load - truck.get_num_bikes() > (v_plus.get_num_bikes()):
+    if Truck.full_load - truck.get_num_bikes() >= (v_plus.get_num_bikes()) or v_plus.id:
         carbon += getDistance(truck.get_pos(), v_plus.get_pos()) * (TRUCK_WEIGHT + truck.get_num_bikes())
         sum_distance += getDistance(truck.get_pos(), v_plus.get_pos())
         # print("truck's position: ",pos_to_id(truck.get_pos(),tsp), " ", truck.get_num_bikes(), "sum distance so far: ",sum_distance, "sum carbonP: ", carbon)
@@ -375,9 +375,9 @@ def write_csv(k, goPath,carbon_list,distance_list):
     f.write("\n")
 
 def net_function():
-    l = ["/home/agao/ALL_DATA_7-25/", "/home/agao/ALL_DATA_7-25-110/",  "/home/agao/ALL_DATA_7-1000/", "/home/agao/ALL_DATA_7-1000-110/", "/home/agao/ALL_DATA_7-100000/", "/home/agao/ALL_DATA_12-25/", "/home/agao/ALL_DATA_12-25-110/",  "/home/agao/ALL_DATA_12-1000/", "/home/agao/ALL_DATA_12-1000-110/", "/home/agao/ALL_DATA_12-100000/", "/home/agao/ALL_DATA_25-25/", "/home/agao/ALL_DATA_25-25-110/",  "/home/agao/ALL_DATA_25-1000/", "/home/agao/ALL_DATA_25-1000-110/", "/home/agao/ALL_DATA_25-100000/"]
+    l = ["/home/agao/ALL_DATA_25-25/", "/home/agao/ALL_DATA_25-25-110/",  "/home/agao/ALL_DATA_25-1000/", "/home/agao/ALL_DATA_25-1000-110/", "/home/agao/ALL_DATA_25-100000/"]
 
-    nCsv = [26,26,1000,1000,100000,26,26,1000,1000,100000,26,26,1000,1000,100000]
+    nCsv = [26,26,1000,1000,100000]
     for data_path in l:
         print(l.index(data_path))
         if l.index(data_path) in [6]:

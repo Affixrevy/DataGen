@@ -33,6 +33,7 @@ public class Main {
     private static ArrayList<Double> allEmis = new ArrayList<>();
 
     public static void main(String[] args) {
+        String[] allFiles = {"/home/agao/ALL_DATA_12-25", "/home/agao/ALL_DATA_12-25-110", "/home/agao/ALL_DATA_12-1000", "/home/agao/ALL_DATA_12-25-1000-110", "/home/agao/ALL_DATA_12-100000", "/home/agao/ALL_DATA_100000-10"}
 
 
         for (int i = 0; i <= totNumb; i++) {
@@ -89,7 +90,7 @@ public class Main {
     }//End Main
 
     //Import distances form csv
-    private static int importer(int num) {
+    private static int importer(int num, String Name) {
         String line;
 
         int totBike = 0;
@@ -100,7 +101,7 @@ public class Main {
         String FileName = fileName + num + ".csv";
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(FileName));
+            BufferedReader reader = new BufferedReader(new FileReader(Name));
 
             while ((line = reader.readLine()) != null) {
                 String[] temp = line.split(",");

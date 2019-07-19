@@ -17,11 +17,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+            <state>
+              <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#importer#0;class#Main#0" />
+                <element signature="method#csvWrite#0;class#Main#0" />
                 <element signature="method#calcDist#0;class#Main#0" />
                 <element signature="method#setDist#0;class#Main#0" />
                 <element signature="method#sorter#0;class#Main#0" />
@@ -145,12 +145,12 @@
       <workItem from="1563390414537" duration="4112000" />
       <workItem from="1563463186646" duration="660000" />
       <workItem from="1563467065247" duration="5766000" />
-      <workItem from="1563482857712" duration="1062000" />
+      <workItem from="1563482857712" duration="2873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17612000" />
+    <option name="totallyTimeSpent" value="19423000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -205,11 +205,11 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/truck.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+        <state>
+          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#importer#0;class#Main#0" />
+            <element signature="method#csvWrite#0;class#Main#0" />
             <element signature="method#calcDist#0;class#Main#0" />
             <element signature="method#setDist#0;class#Main#0" />
             <element signature="method#sorter#0;class#Main#0" />
