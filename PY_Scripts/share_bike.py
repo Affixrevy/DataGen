@@ -333,9 +333,9 @@ def main():
     # print("avg_car: ",avg_car)
 
 
-def station_125(data_path, goPath):
-    carbon_list = []
-    distance_list = []
+def station_125(data_path, goPath,carbon_list.distance_list):
+    #carbon_list = []
+    #distance_list = []
     
     if True:
         stations = generate_data(data_path)
@@ -352,8 +352,9 @@ def station_125(data_path, goPath):
     #f.write("distance: ")
     #for i in distance_list:
     #   print(i)
+    return carbon_list,distance_list
 
-def write_csv(k):
+def write_csv(k, goPath,carbon_list,distance_list):
     f = open(str(goPath) + "OUT_+_" + str(k) +".csv","w+")
     print("###############################################################################")
     print("                 DONE                                    DONE          ")
@@ -386,22 +387,27 @@ def net_function():
             TRUCK_WEIGHT = 20
             truckFull = 50
         
-
+        carbon_list = []
+        distance_list = []
         for i in range(0,nCsv[l.index(data_path)]):
+
             Data_path = data_path + str(i) +".csv"
-            station_125(Data_path,data_path)
+            carbon_list,distance_list = station_125(Data_path,data_path,carbon_list,distance_list)
 
-        write_csv(0)
-
+        write_csv(0,carbon_list,distance_list)
+        carbon_list = []
+        distance_list = []
         for i in range(0,nCsv[l.index(data_path)]):
             Fata_path = data_path + str(i) +".csv"
-            station_125(Fata_path,5,data_path)
+            carbon_list,distance_list = station_125(Fata_path,data_path,carbon_list,distance_list)
 
-        write_csv(5)
+        write_csv(5,carbon_list,distance_list)
+        carbon_list = []
+        distance_list = []
         for i in range(0,nCsv[l.index(data_path)]):
             Kata_path = data_path + str(i) +".csv"
-            station_125(Kata_path,10,data_path)
-        write_csv(10)
+            carbon_list,distance_list = station_125(Kata_path,data_path,carbon_list,distance_list)
+        write_csv(10,carbon_list,distance_list)
             
 # main()
 
