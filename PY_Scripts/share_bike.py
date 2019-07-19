@@ -333,7 +333,7 @@ def main():
     # print("avg_car: ",avg_car)
 
 
-def station_125(data_path,k, goPath):
+def station_125(data_path, goPath):
     carbon_list = []
     distance_list = []
     
