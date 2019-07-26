@@ -375,16 +375,18 @@ def write_csv(k, goPath,carbon_list,distance_list):
     f.write("\n")
 
 def net_function():
-    l = ["/home/agao/ALL_DATA_25-25/", "/home/agao/ALL_DATA_25-25-110/",  "/home/agao/ALL_DATA_25-1000/", "/home/agao/ALL_DATA_25-1000-110/", "/home/agao/ALL_DATA_25-100000/"]
+    l = ["C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_7-25", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_7-25-110", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_7-1000", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_7-1000-110", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_12-25", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_12-25-110", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_12-1000", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_12-1000-110", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_25-25", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_25-25-110", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_25-1000", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_25-1000-110"]
 
-    nCsv = [26,26,1000,1000,100000]
+    nCsv = [26,26,1000,1000,26,26,1000,1000,26,26,1000,1000]
     for data_path in l:
         print(l.index(data_path))
-        if l.index(data_path) in [6]:
+        if l.index(data_path) in [4]:
             TRUCK_WEIGHT = 10
             truckFull = 25
-        #if l.index(data_path) in [11]:
-        
+        if l.index(data_path) in [8]:
+            TRUCK_WEIGHT = 20
+            truckFull = 50
+
         TRUCK_WEIGHT = 20
         truckFull = 50
         
@@ -395,20 +397,20 @@ def net_function():
             Data_path = data_path + str(i) +".csv"
             carbon_list,distance_list = station_125(Data_path,data_path,carbon_list,distance_list, 0)
 
-        write_csv(0,data_path,carbon_list,distance_list)
+        write_csv(0,"C:\\Users\\Arthur\\Documents\\PY_Out\\"+l.index(data_path),carbon_list,distance_list)
         carbon_list = []
         distance_list = []
         for i in range(0,nCsv[l.index(data_path)]):
             Fata_path = data_path + str(i) +".csv"
             carbon_list,distance_list = station_125(Fata_path,data_path,carbon_list,distance_list, 5)
 
-        write_csv(5,data_path,carbon_list,distance_list)
+        write_csv(5,"C:\\Users\\Arthur\\Documents\\PY_Out\\"+l.index(data_path),carbon_list,distance_list)
         carbon_list = []
         distance_list = []
         for i in range(0,nCsv[l.index(data_path)]):
             Kata_path = data_path + str(i) +".csv"
             carbon_list,distance_list = station_125(Kata_path,data_path,carbon_list,distance_list, 10)
-        write_csv(10,data_path,carbon_list,distance_list)
+        write_csv(10,"C:\\Users\\Arthur\\Documents\\PY_Out\\"+l.index(data_path),carbon_list,distance_list)
             
 # main()
 

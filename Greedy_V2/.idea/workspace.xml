@@ -17,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1145">
-              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="-198">
+              <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#calcDist#0;class#Main#0" />
@@ -30,10 +30,6 @@
                 <element signature="method#finalPrint#0;class#Main#0" />
                 <element signature="class#Station#0" />
                 <element signature="class#truck#0" />
-                <element signature="e#9924#9925#0" expanded="true" />
-                <element signature="e#9952#9953#0" expanded="true" />
-                <element signature="e#9988#9989#0" expanded="true" />
-                <element signature="e#10015#10016#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,17 +54,16 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1456" />
-    <option name="y" value="-16" />
-    <option name="width" value="1035" />
-    <option name="height" value="798" />
+    <option name="x" value="-1928" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -92,11 +87,13 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -144,18 +141,21 @@
       <workItem from="1563390414537" duration="4112000" />
       <workItem from="1563463186646" duration="660000" />
       <workItem from="1563467065247" duration="5766000" />
-      <workItem from="1563482857712" duration="6923000" />
+      <workItem from="1563482857712" duration="8159000" />
+      <workItem from="1563834086586" duration="4078000" />
+      <workItem from="1563899267365" duration="4373000" />
+      <workItem from="1563931281008" duration="1267000" />
+      <workItem from="1563987062624" duration="7172000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23473000" />
+    <option name="totallyTimeSpent" value="41599000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11567164" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.06289978" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -204,8 +204,8 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/truck.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1145">
-          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+        <state relative-caret-position="-198">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#calcDist#0;class#Main#0" />
@@ -217,10 +217,6 @@
             <element signature="method#finalPrint#0;class#Main#0" />
             <element signature="class#Station#0" />
             <element signature="class#truck#0" />
-            <element signature="e#9924#9925#0" expanded="true" />
-            <element signature="e#9952#9953#0" expanded="true" />
-            <element signature="e#9988#9989#0" expanded="true" />
-            <element signature="e#10015#10016#0" expanded="true" />
           </folding>
         </state>
       </provider>

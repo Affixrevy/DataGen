@@ -10,8 +10,8 @@ import java.util.Scanner;
 public class Main {
 
     //Manipulable Variables
-    private static int busWeight = 10;
-    private static int maxBike = 25;
+    private static int busWeight = 0;
+    private static int maxBike = 15;
     private static double depotXPos = 34.28037084;
     private static double depotYPos = 108.9691212;
     private static int startingBikes = 0;
@@ -33,19 +33,26 @@ public class Main {
     private static ArrayList<Double> allEmis = new ArrayList<>();
 
     public static void main(String[] args) {
-        String[] allFiles = {"/home/agao/ALL_DATA_12-25", "/home/agao/ALL_DATA_12-25-110", "/home/agao/ALL_DATA_12-1000", "/home/agao/ALL_DATA_12-1000-110", "/home/agao/ALL_DATA_12-100000", "/home/agao/ALL_DATA_12-100000-110", "/home/agao/ALL_DATA_25-25", "/home/agao/ALL_DATA_25-25-110", "/home/agao/ALL_DATA_25-1000", "/home/agao/ALL_DATA_25-1000-110", "/home/agao/ALL_DATA_25-100000", "/home/agao/ALL_DATA_25-100000-110"};
-        int[] allTNum = {25, 25, 999, 999, 99999, 99999, 25, 25, 999, 999, 99999, 99999};
-
+        String[] allFiles = {"C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_7-25", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_7-25-110", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_7-1000", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_7-1000-110", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_12-25", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_12-25-110", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_12-1000", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_12-1000-110",  "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_25-25", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_25-25-110", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_25-1000", "C:\\Users\\Arthur\\Documents\\DATA\\ALL_DATA_25-1000-110"};
+        int[] allTNum = {25, 25, 999, 999, 25, 25, 999, 999, 25, 25, 999, 999};
         for (int j = 0; j < allFiles.length; j++) {
+
 
             fileName = allFiles[j];
             totNumb = allTNum[j];
-            if(j == 6){
+            if(j == 4){
+                maxBike = 25;
+                busWeight = 10;
+            } else if (j == 8){
                 maxBike = 50;
                 busWeight = 20;
             }
 
             for (int l = 0; l < 3; l++) {
+
+
+                allDist.clear();
+                allEmis.clear();
 
                 if(l == 0){
                     startingBikes = 0;
@@ -97,7 +104,7 @@ public class Main {
                 System.out.println("###############################################################################");
                 System.out.println();
 
-                csvWrite(j, l);
+                csvWrite(allFiles[j].substring(allFiles[j].indexOf('L')-1), startingBikes);
                 finalPrint();
             }
         }
@@ -112,7 +119,7 @@ public class Main {
 
         //String fileName = "stations12.csv";
 
-        String FileName = fileName + "/" + num + ".csv";
+        String FileName = fileName + "\\" + num + ".csv";
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(FileName));
@@ -141,8 +148,8 @@ public class Main {
         return totBike;
     }//End importer
 
-    private static void csvWrite(int j, int l) {
-        try (PrintWriter writer = new PrintWriter(new File("/home/agao/EXPORT/out"+j+l+".csv"))) {
+    private static void csvWrite(String saveName, int b) {
+        try (PrintWriter writer = new PrintWriter(new File("C:\\Users\\Arthur\\Documents\\Run_OUT\\"+saveName+"+"+b+".csv"))) {
 
             StringBuilder sb = new StringBuilder();
 
